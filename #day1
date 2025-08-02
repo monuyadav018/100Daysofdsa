@@ -1,0 +1,35 @@
+#leetcode122 : BEST TIME TO BUY OR SELL THE STOCK II
+  class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int sum =0;
+        for(int i=1;i<prices.size();i++){
+            int j=i-1;
+            if(prices[j]<=prices[i]){
+                sum+= (prices[i]-prices[j]);
+            }
+            
+        }
+
+        return sum;
+    }
+};
+
+it was an easy approach todo simply an iteration and traversal problem 
+
+
+  #leetcode55 : 55. Jump Game
+    class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int mr=0;
+        for(int i=0;i<nums.size();i++){
+            if(i>mr) return false;
+            mr = max(mr,i+nums[i]);
+        }
+        return true;
+    }
+};
+
+
+it took little more effort to getsolved but was nice
